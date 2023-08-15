@@ -20,7 +20,7 @@ module.exports.getProducts = (req, res, next) => {
   }
 
   module.exports.getAllProducts = (req, res, next) => {
-    const products = Product.fetchAllProducts();
+   Product.fetchAllProducts(products =>{
     res.render('shop', {
       prods: products,
       pageTitle: 'Shop',
@@ -29,6 +29,8 @@ module.exports.getProducts = (req, res, next) => {
       activeShop: true,
       productCSS: true
     });
+   });
+  
   }
 
   // module.exports.products = products
